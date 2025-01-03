@@ -1,0 +1,15 @@
+<po-page-dynamic-table
+  #pageProducts
+  p-title="Página de Produtos"
+  [p-breadcrumb]="{
+    items: [{ label: 'Home', link: '/home' }, { label: 'Produtos' }]
+  }"
+  [p-fields]="fields"
+  [p-service-api]="url"
+  [p-actions]="actions"
+  [p-table-custom-actions]="tableActions"
+/>
+
+<po-modal #catalogDetailModal [p-title]="nomeproduct">
+  <po-dynamic-view [p-fields]="productFields" [p-value]="productData" />
+</po-modal>

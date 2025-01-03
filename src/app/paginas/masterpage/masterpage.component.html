@@ -1,0 +1,26 @@
+<!-- <div class="po-wrapper-menu-panel">
+  <po-menu-panel
+    [p-menus]="menus"
+    p-logo="https://po-ui.io/assets/po-logos/po_color_bg.svg"
+  ></po-menu-panel>
+  <po-page-default [p-title]="title">
+    <router-outlet></router-outlet>
+  </po-page-default>
+</div> -->
+
+<div class="po-wrapper">
+  <po-menu
+    p-collapsed:boolean
+    p-filter:boolean
+    [p-menus]="menus"
+    [p-automatic-toggle]="true"
+  >
+    <div
+      *p-menu-header-template
+      class="po-p-2 po-font-title sample-menu-header-text-color"
+    >
+      <p>Welcome</p>
+    </div>
+  </po-menu>
+  <router-outlet></router-outlet>
+</div>
