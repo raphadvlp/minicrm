@@ -78,8 +78,8 @@ export class CatalogpageComponent {
   @ViewChild('catalogDetailModal') productModalEl!: PoModalComponent;
 
   public productFields: PoDynamicViewField[] = [
-    { property: 'id', label: 'Id', gridColumns: 2 },
-    { property: 'name', label: 'Nome' },
+    { property: 'id', label: 'Id', gridColumns: 3 }, //gridColumns é no máximo 12, se tiver 12 ele ocupa a coluna toda
+    // { property: 'name', label: 'Nome' },
     { property: 'genre', label: 'Genero' },
     { property: 'country', label: 'País', divider: 'País' },
     { property: 'status', label: 'Status' },
@@ -88,6 +88,7 @@ export class CatalogpageComponent {
   public productData: any;
 
   public openDetailProduct(products: any) {
+    this.nomeproduct = products.name;
     this.productData = products;
     this.productModalEl.open();
   }

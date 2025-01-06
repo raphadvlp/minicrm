@@ -3,13 +3,13 @@ export class Products {
   name: string;
   genre: string;
   country: string;
-  // status: string;
+  status: string;
 
   constructor() {
     this.id = '';
     this.name = '';
     this.genre = '';
     this.country = '';
-    // this.status = '';
+    this.status = '';
   }
 }
