@@ -9,6 +9,7 @@ import { LogoffpageComponent } from './paginas/logoffpage/logoffpage.component';
 import { ErrorpageComponent } from './paginas/errorpage/errorpage.component';
 import { GrupoproductpageComponent } from './paginas/grupoproductpage/grupoproductpage.component';
 import { NewproductComponent } from './paginas/newproduct/newproduct.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
   { path: 'login', component: LoginpageComponent },
@@ -24,6 +25,7 @@ export const routes: Routes = [
       { path: 'budgets', component: BudgetpageComponent },
       { path: 'logoff', component: LogoffpageComponent },
     ],
+    canActivate: [authGuard],
   },
   { path: '**', component: ErrorpageComponent },
 ];
