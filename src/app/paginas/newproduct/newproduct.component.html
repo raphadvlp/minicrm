@@ -1,3 +1,11 @@
 <po-dynamic-form #formNewProduct [p-fields]="fields" />
 
+<div class="po-row">
+  <po-button
+    class="po-md-3"
+    p-label="Confirmar"
+    (p-click)="confirmForm(formNewProduct.form.value)"
+  />
+</div>
+
 <!-- [p-value]="productData" SERVE PARA FORMLÁRIO DE EDIÇÃO, ELE TRAS OS DADOS NO FORMULÁRIO -->

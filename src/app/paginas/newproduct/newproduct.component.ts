@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   ForceOptionComponentEnum,
+  PoButtonModule,
   PoDynamicFormField,
   PoDynamicModule,
+  PoNotificationService,
 } from '@po-ui/ng-components';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-newproduct',
   standalone: true,
-  imports: [PoDynamicModule],
+  imports: [PoDynamicModule, PoButtonModule],
   templateUrl: './newproduct.component.html',
   styleUrl: './newproduct.component.css',
 })
@@ -54,6 +59,25 @@ export class NewproductComponent {
       ],
     },
   ];
+
+  private http = inject(HttpClient);
+  private route = inject(Router);
+  private url: string = environment.url;
+  private notify = inject(PoNotificationService);
+
+  public confirmForm(form: any) {
+    this.http.post<any>(`&{this.url}/people`, form).subscribe({
+      next: (value) =>
+        this.notify.success({
+          duration: 2000,
+          message: `Novo cliente ${value.name} cadastrado com sucesso!`,
+        }),
+      error: (error) =>
+        this.notify.error({ duration: 2000, message: error.message }),
+      complete: () => this.route.navigate(['catalog']), //faz um redirecionamento()
+    });
+    this.route.navigate(['catalog']);
+  }
 }
 
 //se quiser usar mascara para telefone, cpf etc: mask: '000.000.000-00'

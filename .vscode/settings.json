@@ -1,3 +1,4 @@
 {
-  "totvsLanguageServer.welcomePage": false
+  "totvsLanguageServer.welcomePage": false,
+  "totvsLanguageServer.editor.linter.includes": "G:\\TOTVS\\Protheus\\1212210\\include;G:\\TOTVS\\Protheus\\1212210\\Protheus\\include"
 }

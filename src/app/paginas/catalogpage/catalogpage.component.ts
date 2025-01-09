@@ -31,7 +31,7 @@ import {
 export class CatalogpageComponent {
   public fields: PoPageDynamicTableField[] = [
     { property: 'id', label: 'Id', filter: true, key: true },
-    { property: 'name', label: 'Nome' },
+    { property: 'name', label: 'Nome', allowColumnsManager: true },
     { property: 'genre', label: 'Genero' },
     { property: 'country', label: 'País' },
     {
