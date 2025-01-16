@@ -1,16 +1,59 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "email": "user@example.com",
-            "password": "123456"
-        }
-    ],
-    "posts": [
-        {
-            "id": 1,
-            "title": "Hello World",
-            "content": "This is a post."
-        }
-    ]
+  "items": [
+    {
+      "id": "0148093543698",
+      "name": "Ronaldo Nascimento Filho",
+      "message": "Welcome, Ronaldo!"
+    },
+    {
+      "id": "0248093584089",
+      "name": "Nivalda Oliveira",
+      "message": "Hello, Nivalda!"
+    },
+    {
+      "id": "0348093615904",
+      "name": "Leonardo Silveira",
+      "message": "Good day, Leonardo!"
+    },
+    {
+      "id": "0448093615904",
+      "name": "Rafaela Gonçalvez Dias",
+      "message": "Nice to meet you, Rafaela!"
+    },
+    {
+      "id": "0548093770300",
+      "name": "Marcos Paulo Silva",
+      "message": "Hi there, Marcos!"
+    },
+    {
+      "id": "0648093812893",
+      "name": "João Severino",
+      "message": "Hello, João!"
+    },
+    {
+      "id": "0748093840433",
+      "name": "José Marcos Cardoso",
+      "message": "Welcome, José!"
+    },
+    {
+      "id": "0848094890811",
+      "name": "Karlo Rodrigues",
+      "message": "Good to see you, Karlo!"
+    },
+    {
+      "id": "0948094960731",
+      "name": "Filipa Assunção",
+      "message": "Hello, Filipa!"
+    },
+    {
+      "id": "1048094984943",
+      "name": "Washington Camilo Domingues",
+      "message": "Hi, Washington!"
+    },
+    {
+      "id": "1148095011290",
+      "name": "Alice Flores Gentil",
+      "message": "Greetings, Alice!"
+    }
+  ]
 }

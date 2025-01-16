@@ -1,4 +1,31 @@
-<div class="po-wrapper-menu-panel">
+<div class="po-wrapper">
+  <po-menu
+    [p-menus]="menus"
+    p-short-logo="crm128.png"
+    [p-collapsed]="true"
+    [p-automatic-toggle]="true"
+  >
+    <div
+      *p-menu-header-template
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      "
+    >
+      <img src="crm128.png" alt="" id="logo" />
+    </div>
+  </po-menu>
+
+  <router-outlet></router-outlet>
+
+  <!-- <po-page-default [p-title]="title">
+    <router-outlet></router-outlet>
+  </po-page-default> -->
+</div>
+
+<!-- <div class="po-wrapper-menu-panel">
   <po-menu-panel
     [p-menus]="menus"
     p-logo="https://po-ui.io/assets/po-logos/po_color_bg.svg"
@@ -6,7 +33,7 @@
   <po-page-default [p-title]="title">
     <router-outlet></router-outlet>
   </po-page-default>
-</div>
+</div> -->
 
 <!-- <div class="po-wrapper">
   <po-menu

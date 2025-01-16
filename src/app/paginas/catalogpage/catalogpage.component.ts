@@ -31,35 +31,40 @@ import {
 export class CatalogpageComponent {
   public fields: PoPageDynamicTableField[] = [
     { property: 'id', label: 'Id', filter: true, key: true },
+    { property: 'message', label: 'Menssagem' },
     { property: 'name', label: 'Nome', allowColumnsManager: true },
-    { property: 'genre', label: 'Genero' },
-    { property: 'country', label: 'País' },
-    {
-      property: 'status',
-      label: 'Status',
-      filter: true,
-      type: 'label',
-      labels: [
-        {
-          value: 'active',
-          label: 'Ativo',
-          color: '#000080',
-          textColor: '#F0F8FF',
-          icon: 'ph ph-user',
-        },
-        {
-          value: 'inactive',
-          label: 'Inativo',
-          color: '#F00000',
-          textColor: '#F0F8FF',
-          icon: 'ph ph-building',
-        },
-      ],
-    },
+    // { property: 'id', label: 'Id', filter: true, key: true },
+    // { property: 'name', label: 'Nome', allowColumnsManager: true },
+    // { property: 'genre', label: 'Genero' },
+    // { property: 'country', label: 'País', order: 1 },
+    // {
+    //   property: 'status',
+    //   label: 'Status',
+    //   filter: true,
+    //   type: 'label',
+    //   labels: [
+    //     {
+    //       value: 'active',
+    //       label: 'Ativo',
+    //       color: '#000080',
+    //       textColor: '#F0F8FF',
+    //       icon: 'ph ph-user',
+    //     },
+    //     {
+    //       value: 'inactive',
+    //       label: 'Inativo',
+    //       color: '#F00000',
+    //       textColor: '#F0F8FF',
+    //       icon: 'ph ph-building',
+    //     },
+    //   ],
+    // },
   ];
 
   // public url: string = `${environment.url}/people`;
-  public url: string = `${environment.url}/people`;
+  // public url: string = `${environment.urlProducts}/people`;
+  public url: string = `${environment.urlProducts}/api/v1/helloworld`;
+  // public url: string = `${environment.urlProducts}/items`;
   public actions: PoPageDynamicTableActions = {
     new: '/catalog/new',
     remove: true,
@@ -79,13 +84,17 @@ export class CatalogpageComponent {
 
   public productFields: PoDynamicViewField[] = [
     { property: 'id', label: 'Id', gridColumns: 3 }, //gridColumns é no máximo 12, se tiver 12 ele ocupa a coluna toda
+    { property: 'message', label: 'Menssagem' },
+    { property: 'name', label: 'Nome' },
+
+    // { property: 'id', label: 'Id', gridColumns: 3 }, //gridColumns é no máximo 12, se tiver 12 ele ocupa a coluna toda
     // { property: 'name', label: 'Nome' },
-    { property: 'genre', label: 'Genero' },
-    { property: 'country', label: 'País', divider: 'País' },
-    { property: 'status', label: 'Status' },
+    // { property: 'genre', label: 'Genero' },
+    // { property: 'country', label: 'País', divider: 'País' },
+    // { property: 'status', label: 'Status' },
   ];
 
-  public productData: any;
+  public productData: any[] = [];
 
   public openDetailProduct(products: any) {
     this.nomeproduct = products.name;

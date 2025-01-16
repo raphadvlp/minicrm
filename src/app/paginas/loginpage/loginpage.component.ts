@@ -28,11 +28,10 @@ export class LoginpageComponent {
         let loginNow = Date.now();
         this.loginData = value;
 
-        localStorage.setItem('access_token', this.loginData.access_token);
-        localStorage.setItem('refresh_token', this.loginData.refresh_token);
+        localStorage.setItem('accessToken', this.loginData.accessToken);
         localStorage.setItem(
-          'expires_in',
-          (loginNow + this.loginData.expires_in * 1000).toString() //Valor em milisegundos para o localStorage
+          'expiresAt',
+          (loginNow + this.loginData.expiresAt * 1000).toString() //Valor em milisegundos para o localStorage
         );
         localStorage.setItem('username', loginPage.login);
 
@@ -43,8 +42,9 @@ export class LoginpageComponent {
         console.log('erro', err);
         let msgerro: string;
         err.error.code === 401
-          ? (msgerro = 'Login Inválido!')
-          : (msgerro = err.error.message);
+          ? (msgerro = err.error.message)
+          : (msgerro = 'Login Inválido!');
+
         this.notify.error({ duration: 2000, message: msgerro }); //TODO: Corrigir a mensagem
         this.isHiddenLoading = true;
       },

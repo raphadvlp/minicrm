@@ -1,6 +1,11 @@
 export class loginData {
-  access_token!: string;
+  accessToken!: string;
   token_type!: string;
-  expires_in!: number;
+  expiresAt!: number;
   refresh_token!: string;
+}
+
+export class loginCred {
+  username!: string;
+  password!: string;
 }

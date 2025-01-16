@@ -6,9 +6,8 @@ export const authGuard: CanActivateFn = (route, state) => {
   let router = inject(Router);
   let loginService = inject(LoginService);
   let username = localStorage.getItem('username');
-  let access_token = localStorage.getItem('access_token');
-  let refresh_token = localStorage.getItem('refresh_token');
-  let expires_in = localStorage.getItem('expires_in');
+  let access_token = localStorage.getItem('accessToken');
+  let expires_in = localStorage.getItem('expiresAt');
 
   if (!username) {
     router.navigate(['/login']);
@@ -23,7 +22,7 @@ export const authGuard: CanActivateFn = (route, state) => {
       // router.navigate(['/login']);
     }
   }
-
+  /*
   if (typeof refresh_token === 'string') {
     loginService.refreshLogin(refresh_token).subscribe({
       next: (value) => {
@@ -40,7 +39,7 @@ export const authGuard: CanActivateFn = (route, state) => {
       },
       complete: () => {},
     });
-  }
+  }*/
 
   return true;
 };

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnDestroy } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
+  PoDialogService,
+  PoMenuItem,
   PoMenuModule,
   PoMenuPanelItem,
   PoMenuPanelModule,
@@ -16,14 +18,17 @@ import {
 })
 export class MasterpageComponent {
   title: string = 'Home';
+  #dialog = inject(PoDialogService);
 
-  readonly menus: Array<PoMenuPanelItem> = [
-    // {
-    //   label: 'Home',
-    //   link: 'home',
-    //   action: this.clickItemMenu.bind(this),
-    //   icon: 'po-icon po-icon-home',
-    // },
+  // readonly menus: Array<PoMenuLabelItem> = [
+  readonly menus: Array<PoMenuItem> = [
+    {
+      label: 'Home',
+      shortLabel: 'Home',
+      link: 'home',
+      action: this.clickItemMenu.bind(this),
+      icon: 'po-icon po-icon-home',
+    },
     // {
     //   label: 'Customers',
     //   link: 'customers',
@@ -31,13 +36,15 @@ export class MasterpageComponent {
     //   icon: 'po-icon po-icon-users',
     // },
     {
-      label: 'Produtos',
+      label: 'Usuarios',
+      shortLabel: 'Usuarios',
       link: 'catalog',
       action: this.clickItemMenu.bind(this),
-      icon: 'po-icon po-icon-grid',
+      icon: 'po-icon ph ph-users',
     },
     {
-      label: 'Grupo de Produtos',
+      label: 'Produtos',
+      shortLabel: 'Produtos',
       link: 'grupoproduct',
       action: this.clickItemMenu.bind(this),
       icon: 'po-icon po-icon-grid',
@@ -50,13 +57,27 @@ export class MasterpageComponent {
     // },
     {
       label: 'Exit',
-      link: 'logoff',
-      action: this.clickItemMenu.bind(this),
+      shortLabel: 'Exit',
+      // link: 'logoff',
+      action: this.clickIteLogoff.bind(this),
       icon: 'po-icon po-icon-exit',
     },
   ];
 
   clickItemMenu(menu: PoMenuPanelItem): void {
     this.title = menu.label;
+  }
+
+  // Logoff
+  clickIteLogoff() {
+    this.#dialog.confirm({
+      title: 'Confirmação de logoff',
+      message: 'Deseja realmente sair?',
+      confirm: () => {
+        localStorage.clear();
+        location.reload();
+      },
+      cancel: () => {},
+    });
   }
 }

@@ -1,6 +1,6 @@
 <po-page-dynamic-table
   #pageProducts
-  p-title="Página de Produtos"
+  p-title="Página de Usuários"
   [p-breadcrumb]="{
     items: [{ label: 'Home', link: '/home' }, { label: 'Produtos' }]
   }"
@@ -13,3 +13,5 @@
 <po-modal #catalogDetailModal [p-title]="nomeproduct">
   <po-dynamic-view [p-fields]="productFields" [p-value]="productData" />
 </po-modal>
+
+<!--   (p-sort-change)="onSort($event)"> -->

@@ -11,12 +11,14 @@ import { environment } from '../../environments/environment';
 export class CustomerService {
   #http = inject(HttpClient);
   // #url = environment.url;
-  #url = environment.url;
+  #url = environment.urlProducts;
 
   constructor() {}
 
   public getCustomers(): Observable<Array<Products>> {
-    let url: string = `${this.#url}/people`;
+    let url: string = `${this.#url}/api/v1/helloworld`;
+    // let url: string = `${this.#url}/items`;
+    // let url: string = `${this.#url}/people`;
     return this.#http.get<Array<Products>>(url);
   }
 }
