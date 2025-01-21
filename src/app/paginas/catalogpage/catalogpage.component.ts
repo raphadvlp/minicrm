@@ -15,6 +15,9 @@ import {
   PoTableModule,
 } from '@po-ui/ng-components';
 
+import { PoDataTransform } from '@po-ui/ng-sync';
+import { DataTransform } from '../../shared/dataTransform';
+
 @Component({
   selector: 'app-catalogpage',
   standalone: true,
@@ -28,11 +31,11 @@ import {
   templateUrl: './catalogpage.component.html',
   styleUrl: './catalogpage.component.css',
 })
-export class CatalogpageComponent {
+export class CatalogpageComponent extends DataTransform {
   public fields: PoPageDynamicTableField[] = [
     { property: 'id', label: 'Id', filter: true, key: true },
-    { property: 'message', label: 'Menssagem' },
     { property: 'name', label: 'Nome', allowColumnsManager: true },
+    { property: 'message', label: 'Menssagem' },
     // { property: 'id', label: 'Id', filter: true, key: true },
     // { property: 'name', label: 'Nome', allowColumnsManager: true },
     // { property: 'genre', label: 'Genero' },
@@ -84,8 +87,8 @@ export class CatalogpageComponent {
 
   public productFields: PoDynamicViewField[] = [
     { property: 'id', label: 'Id', gridColumns: 3 }, //gridColumns é no máximo 12, se tiver 12 ele ocupa a coluna toda
-    { property: 'message', label: 'Menssagem' },
     { property: 'name', label: 'Nome' },
+    { property: 'message', label: 'Menssagem' },
 
     // { property: 'id', label: 'Id', gridColumns: 3 }, //gridColumns é no máximo 12, se tiver 12 ele ocupa a coluna toda
     // { property: 'name', label: 'Nome' },

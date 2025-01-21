@@ -75,8 +75,8 @@ export class NewproductComponent {
   private notify = inject(PoNotificationService);
 
   public confirmForm(form: any) {
-    this.http.post<any>(`&{this.url}/api/v1/helloworld`, form).subscribe({
-      // this.http.post<any>(`&{this.url}/people`, form).subscribe({
+    this.http.post<any>(`${this.url}/api/v1/helloworld`, form).subscribe({
+      // this.http.post<any>(`${this.url}/people`, form).subscribe({
       next: (value) =>
         this.notify.success({
           duration: 2000,

@@ -8,6 +8,6 @@ export const environment = {
   url: 'http://localhost:8000',
   // url: 'https://api-serverless-taupe.vercel.app/api/login',
   // urlProducts: 'https://po-sample-api.onrender.com/v1',
+  // urlProducts: 'http://192.168.199.87:8000',
   urlProducts: 'http://localhost:8000',
-  // urlProducts: 'http://localhost:3000',
 };
